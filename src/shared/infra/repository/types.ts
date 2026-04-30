@@ -5,6 +5,12 @@ export interface Repository {
 
 export class InvalidEntity extends Error {
     constructor(entity: string) {
-        super(`Entity {${entity}} does not exist in this repository`)
+        super(`Entidade {${entity}} não existe no repositorio`)
+    }
+}
+
+export class InvalidHTTPResponse extends Error {
+    constructor() {
+        super('Resposta Inválida do servidor. Tente novamente mais tarde')
     }
 }

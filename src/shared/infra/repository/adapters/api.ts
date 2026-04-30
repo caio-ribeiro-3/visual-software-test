@@ -1,6 +1,6 @@
 
 
-import type { Repository } from "../types";
+import type { Repository, InvalidHTTPResponse } from "../types";
 
 export class ApiRepository implements Repository {
     private baseURL = import.meta.env.VITE_API_ENDPOINT as string;
@@ -17,7 +17,12 @@ export class ApiRepository implements Repository {
             },
             body: body ? JSON.stringify(body) : undefined
         })
-            .then(response => response.json() as T)
+            .then(response => {
+                if (!response.ok) {
+                    throw new InvalidHTTPResponse();
+                }
+                return response.json() as T
+            })
     }
 
     list<T>(entity: string): Promise<T[]> {

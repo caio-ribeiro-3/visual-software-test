@@ -5,7 +5,7 @@ import { useToast } from "@/shared/ui/toast";
 import type { QueryCallbacks, UseMutationPayload, UseMutationReturn, UseQueryPayload, UseQueryReturn } from "./types";
 
 /**
- * Hook para execução de consultas de dados (fetch) na montagem do componente.
+ * Hook para execução de consultas de dados na montagem do componente.
  * 
  * Gerencia o ciclo de vida de uma requisição assíncrona, controlando estados de
  * carregamento, sucesso e erro. Dispara automaticamente um alerta visual (toast)
@@ -43,7 +43,7 @@ export function useQuery<T>({
 }
 
 /**
- * Hook para execução de operações de alteração de dados (mutations).
+ * Hook para execução de operações de alteração de dados.
  * 
  * Fornece uma função de execução manual que encapsula o tratamento de erros,
  * estados de ocupado (isLoading) e disparos de feedbacks visuais. Permite a
