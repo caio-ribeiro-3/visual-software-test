@@ -8,9 +8,3 @@ export class InvalidEntity extends Error {
         super(`Entidade {${entity}} não existe no repositorio`)
     }
 }
-
-export class InvalidHTTPResponse extends Error {
-    constructor() {
-        super('Resposta Inválida do servidor. Tente novamente mais tarde')
-    }
-}

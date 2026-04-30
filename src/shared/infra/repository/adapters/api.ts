@@ -1,6 +1,6 @@
 
 
-import { InvalidHTTPResponse, type Repository } from "../types";
+import type { Repository } from "../types";
 
 export class ApiRepository implements Repository {
     private baseURL = import.meta.env.VITE_API_ENDPOINT as string;
@@ -19,11 +19,7 @@ export class ApiRepository implements Repository {
         })
 
         if (!response.ok) {
-            try {
-                throw new Error((await response.json()).message)
-            } catch {
-                throw new InvalidHTTPResponse();
-            }
+            throw new Error((await response.json()).message)
         }
 
         return await response.json() as T
