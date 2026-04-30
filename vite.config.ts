@@ -4,14 +4,11 @@ import react from '@vitejs/plugin-react'
 
 
 // https://vite.dev/config/
-export default defineConfig(({ mode }) => {
-  return {
-    base: mode === 'production' ? '/visual-software-test/' : '/',
-    plugins: [react()],
-    resolve: {
-      alias: {
-        '@': resolve(__dirname, './src'),
-      },
-    }
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, './src'),
+    },
   }
 })
