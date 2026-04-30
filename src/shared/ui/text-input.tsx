@@ -8,7 +8,12 @@ interface TextInputProps {
     onChange?: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement, Element>;
     error?: string;
 }
-
+/**
+ * Componente de input de texto padronizado.
+ * 
+ * Abstrai a lógica de campos de formulário, integrando rótulos, 
+ * estados de erro e mensagens de auxílio de forma automática.
+ */
 export function TextInput({
     label,
     name,

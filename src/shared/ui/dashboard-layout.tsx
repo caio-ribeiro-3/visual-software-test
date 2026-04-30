@@ -33,7 +33,14 @@ const Drawer = styled(MuiDrawer)({
 const mainListItems = [
     { text: 'Usuários ', icon: <PeopleRoundedIcon />, to: '/users' },
 ];
-
+/**
+ * Componente de Layout da área administrativa.
+ * 
+ * Fornece uma estrutura consistente que inclui uma barra de navegação superior
+ * e um menu lateral (Drawer) responsivo. O menu se adapta automaticamente,
+ * alternando entre uma barra lateral fixa em telas grandes e um menu retrátil
+ * (hambúrguer) em dispositivos móveis.
+ */
 export const DashboardLayout = ({ children }: PropsWithChildren) => {
     const [mobileOpen, setMobileOpen] = useState(false);
 

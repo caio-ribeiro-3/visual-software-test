@@ -8,6 +8,15 @@ import MUITableContainer from '@mui/material/TableContainer'
 import MUITableHead from '@mui/material/TableHead'
 import MUITableRow from '@mui/material/TableRow'
 
+
+
+/**
+ * Utilitário para exibição de dados tabulares estruturados.
+ * 
+ * Centraliza a organização de tabelas, fornecendo um container usando o componente <Paper/>
+ * e suporte a rolagem, garantindo que o layout
+ * permaneça consistente e legível.
+ */
 function Table({ children }: PropsWithChildren) {
     return (
         <MUITableContainer component={Paper}>

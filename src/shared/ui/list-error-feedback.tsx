@@ -4,7 +4,12 @@ import Typography from '@mui/material/Typography';
 interface ListErrorFeedbackProps {
   message: string;
 }
-
+/**
+ * Componente de feedback visual para falhas no carregamento de dados.
+ * 
+ * Apresenta uma mensagem de erro estilizada para informar ao usuário que
+ * houve um problema na listagem de dados.
+ */
 export const ListErrorFeedback = ({ message }: ListErrorFeedbackProps) => (
   <Box
     sx={{

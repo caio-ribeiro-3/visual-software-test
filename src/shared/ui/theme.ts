@@ -3,7 +3,7 @@ import { createTheme } from '@mui/material/styles';
 export const theme = createTheme({
   palette: {
     primary: {
-      main: '#0b6bcb', // Azul padrão do Joy UI
+      main: '#0b6bcb',
     },
     background: {
       default: '#f4f6f8',
@@ -15,14 +15,14 @@ export const theme = createTheme({
     },
   },
   shape: {
-    borderRadius: 8, // Bordas suaves do Joy
+    borderRadius: 8,
   },
-  shadows: Array(25).fill('none') as any, // Remove as sombras 3D do Material Design
+  shadows: Array(25).fill('none') as any,
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
-          textTransform: 'none', // Joy UI não usa texto em caixa alta
+          textTransform: 'none',
           fontWeight: 600,
           boxShadow: 'none',
           '&:hover': {
@@ -34,7 +34,7 @@ export const theme = createTheme({
     MuiPaper: {
       styleOverrides: {
         root: {
-          border: '1px solid #d0d7de', // Borda fina no lugar de sombras
+          border: '1px solid #d0d7de',
           boxShadow: 'none',
         },
       },

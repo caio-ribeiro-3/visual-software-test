@@ -7,6 +7,12 @@ import { Link } from '@/shared/infra/router/link';
 import { DashboardLayout } from './dashboard-layout';
 import { Button } from './button';
 
+/**
+ * Tela de erro exibida quando uma rota não é encontrada.
+ * 
+ * Informa ao usuário que o recurso solicitado é inexistente ou foi movido, 
+ * oferecendo uma ação clara de retorno para a página inicial da aplicação.
+ */
 export const NotFoundScreen = () => {
     return (
         <DashboardLayout>

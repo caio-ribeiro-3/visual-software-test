@@ -54,6 +54,14 @@ interface ToastContextData {
 
 const ToastContext = createContext<ToastContextData | null>(null);
 
+
+/**
+ * Provedor e gerenciador de notificações temporárias (Toasts).
+ * 
+ * Centraliza a lógica de exibição de alertas flutuantes no sistema, 
+ * controlando o tempo de vida de cada mensagem e sua renderização 
+ * em uma camada superior da interface.
+ */
 export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [toasts, setToasts] = useState<Toast[]>([]);
 
@@ -73,5 +81,10 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         </ToastContext.Provider>
     );
 };
-
+/**
+ * Hook para disparar notificações visuais.
+ * 
+ * Fornece uma função que aceita uma mensagem e um tipo (sucesso ou erro),
+ * enfileirando o alerta para exibição automática no canto da tela.
+ */
 export const useToast = () => useContext(ToastContext)!;

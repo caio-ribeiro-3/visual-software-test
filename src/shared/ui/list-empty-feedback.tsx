@@ -7,6 +7,13 @@ interface ListEmptyFeedbackProps {
     description: string;
 }
 
+
+/**
+ * Componente de feedback visual para listas vazias.
+ * 
+ * Exibe uma mensagem amigável e um ícone ilustrativo quando não há dados 
+ * para mostrar, ajudando a orientar o usuário sobre o estado atual da tela.
+ */
 export const ListEmptyFeedback = ({ title, description }: ListEmptyFeedbackProps) => (
     <Box
         sx={{

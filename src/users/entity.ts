@@ -1,3 +1,6 @@
+/**
+ * Representa a estrutura de dados central de um usuário no sistema.
+ */
 export interface User {
     id: string;
     name: string;
@@ -5,7 +8,16 @@ export interface User {
     phone: string;
     city: string;
 }
-
+/**
+ * Conjunto de validadores para as propriedades da entidade User.
+ * 
+ * Cada validador garante a integridade dos dados através de lançamentos de exceções (throw):
+ * 
+ * - `name`: Exige texto com no mínimo 4 caracteres.
+ * - `city`: Exige texto com no mínimo 4 caracteres.
+ * - `email`: Valida a obrigatoriedade e o formato através da API de validação nativa do navegador.
+ * - `phone`: Exige exatamente 11 dígitos numéricos, validando o formato DDD + número e proibindo caracteres não numéricos.
+ */
 export const userValidators: Record<keyof Omit<User, 'id'>, ((payload: unknown) => void)> = {
     name: (payload) => {
         if (typeof payload !== 'string') throw new Error('Campo nome deve ser do tipo texto');

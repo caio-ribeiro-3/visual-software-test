@@ -3,6 +3,15 @@ import type { PropsWithChildren } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
+
+
+/**
+ * Cabeçalho de página padronizado com suporte a ações.
+ * 
+ * Exibe o título da seção e organiza elementos adicionais (como botões ou filtros) 
+ * de forma responsiva, alternando entre colunas em dispositivos móveis e 
+ * linha em telas maiores.
+ */
 export function PageHeader({ title, children }: PropsWithChildren<{ title: string }>) {
     return (
         <Box
