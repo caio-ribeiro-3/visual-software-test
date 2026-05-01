@@ -49,10 +49,7 @@ export function useCreateUser({ onSuccess }: QueryCallbacks) {
 
     const mutation = useMutation({
         handler: new CreateUserUseCase(repository).execute,
-        onSuccess() {
-            form.setValues(defaultValues)
-            onSuccess?.()
-        },
+        onSuccess,
     })
 
     return {

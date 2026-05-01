@@ -32,7 +32,7 @@ export class MockRepository implements Repository {
         const entityStorage = this.getEntityStorage(entity)
         const newRecord = {
             ...payload,
-            id: String(entityStorage.lastId++)
+            id: String(++entityStorage.lastId)
         } as T
         // @ts-expect-error
         entityStorage.data.push(newRecord)
