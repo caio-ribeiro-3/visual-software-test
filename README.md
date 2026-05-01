@@ -83,6 +83,9 @@ npm run dev
 
 # Executar testes (Vitest)
 npm run test
+
+# Executar testes (Cypress)
+npm run cy:open
 ```
 
 ---
@@ -93,6 +96,7 @@ npm run test
 A saúde do código é verificada automaticamente em cada commit via **Github Actions**:
 - **TypeScript**: Verificação estática de tipos.
 - **Vitest**: Execução de testes unitários de Validadores, Use Cases e Hooks de domínio.
+- **Cypress**: Execução de testes e2e.
 
 ### 2. Hosting (Cloudflare)
 Deploy realizado via **Cloudflare** com foco em performance e segurança:
@@ -102,3 +106,4 @@ Deploy realizado via **Cloudflare** com foco em performance e segurança:
 ## Qualidade e Documentação
 - **JSDoc**: Documentação técnica focada em intenção e comportamento, integrada ao IntelliSense.
 - **Vitest**: Testes unitários cobrindo o fluxo: Entidade -> Caso de Uso -> Hook de Domínio.
+- **Cypress**: Testes e2e cobrindo o fluxo de criação e listagem de usuários.
