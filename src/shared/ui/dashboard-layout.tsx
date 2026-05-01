@@ -56,9 +56,12 @@ export const DashboardLayout = ({ children }: PropsWithChildren) => {
             }}
         >
             <Stack sx={{ flexGrow: 1 }}>
-                <Box sx={{ p: 2 }}>
+                <Toolbar
+                    sx={{
+                        borderBottom: '1px solid #d0d7de'
+                    }}>
                     <Logo />
-                </Box>
+                </Toolbar>
                 <List data-testid="list" aria-label='list' role='list' dense>
                     {mainListItems.map((item, index) => (
                         <ListItem key={index} disablePadding sx={{ display: 'block' }}>
