@@ -4,23 +4,24 @@ import { ToastProvider, useToast } from './toast';
 
 const TestComponent = ({ message }: { message: string }) => {
     const toast = useToast();
-    return <button onClick={() => toast(message, 'success')}>Show</button>;
+    return <button data-testid="TestComponent" onClick={() => toast(message, 'success')}>Show</button>;
 };
 
 describe('Toast System', () => {
     it('deve exibir a mensagem de toast ao ser disparada', () => {
-        render(
+        const { unmount } = render(
             <ToastProvider>
                 <TestComponent message="Operação concluída" />
             </ToastProvider>
         );
 
-        const button = screen.getByRole('button');
+        const button = screen.getByTestId('TestComponent');
         act(() => {
             button.click();
         });
 
         expect(screen.getByText('Operação concluída')).toBeDefined();
+        unmount()
     });
 
     it('deve remover o toast automaticamente após o timeout', () => {
@@ -32,7 +33,7 @@ describe('Toast System', () => {
         );
 
         act(() => {
-            screen.getByRole('button').click();
+            screen.getByTestId('TestComponent').click();
         });
 
         expect(screen.getByText('Temporário')).toBeDefined();

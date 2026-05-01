@@ -31,3 +31,6 @@ dist-ssr
 !.dev.vars.example
 .env*
 !.env.example
+
+__screenshots__
+.vitest-attachments

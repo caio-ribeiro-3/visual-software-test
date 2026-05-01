@@ -8,5 +8,5 @@ import { Link as RRDLink } from "react-router";
  * para a criação de links na aplicação com suporte a classes CSS personalizadas.
  */
 export const Link = ({ children, to, className = '' }: PropsWithChildren<{ to: string, className?: string }>) => (
-    <RRDLink to={{ pathname: to }} className={className}>{children}</RRDLink>
+    <RRDLink role="link" to={{ pathname: to }} className={className}>{children}</RRDLink>
 )

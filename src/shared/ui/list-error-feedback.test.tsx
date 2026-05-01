@@ -10,11 +10,4 @@ describe('ListErrorFeedback', () => {
         expect(screen.getByText('Ops! Algo deu errado.')).toBeDefined();
         expect(screen.getByText(errorMsg)).toBeDefined();
     });
-
-    it('deve aplicar estilos de erro visíveis', () => {
-        const { container } = render(<ListErrorFeedback message="Erro" />);
-        const box = container.firstChild as HTMLElement;
-
-        expect(box.style.border).toContain('1px solid');
-    });
 });

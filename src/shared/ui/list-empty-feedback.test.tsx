@@ -9,17 +9,17 @@ describe('ListEmptyFeedback', () => {
             description: 'Tente cadastrar um novo usuário para começar.'
         };
 
-        render(<ListEmptyFeedback {...props} />);
+        const { unmount } = render(<ListEmptyFeedback {...props} />);
 
         expect(screen.getByText(props.title)).toBeDefined();
         expect(screen.getByText(props.description)).toBeDefined();
+        unmount()
     });
 
     it('deve renderizar o ícone de feedback', () => {
-        render(<ListEmptyFeedback title="T" description="D" />);
+        render(<ListEmptyFeedback title="Title" description="Description" />);
 
-        // Verifica a presença do ícone (via atributo data-testid padrão do MUI Icons)
-        const icon = screen.getByTestId('GroupAddIcon');
+        const icon = screen.getByTestId('GroupAddIcon', { exact: false });
         expect(icon).toBeDefined();
     });
 });

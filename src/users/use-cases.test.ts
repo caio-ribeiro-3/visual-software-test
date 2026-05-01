@@ -27,7 +27,7 @@ describe('User Use Cases', () => {
         const useCase = new CreateUserUseCase(mockRepository as any);
 
         it('deve validar os campos antes de chamar o repositório', async () => {
-            const payloadInvalido = { name: 'Ab' }; // Curto demais
+            const payloadInvalido = { city: 'test', email: 'email@email.com', name: 'Ab' };
 
             await expect(useCase.execute(payloadInvalido as any))
                 .rejects.toThrow('Campo nome deve ter mais de 4 caracteres');
