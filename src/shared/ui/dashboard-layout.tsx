@@ -87,9 +87,8 @@ export const DashboardLayout = ({ children }: PropsWithChildren) => {
                     borderBottom: '1px solid #d0d7de'
                 }}
             >
-                <Toolbar sx={{ justifyContent: 'space-between' }}>
-                    <div></div>
-                    <IconButton aria-label='menu' color="inherit" edge="start" onClick={handleDrawerToggle} sx={{ mr: 2, display: { md: 'none' } }}>
+                <Toolbar>
+                    <IconButton aria-label='menu' color="inherit" edge="start" onClick={handleDrawerToggle} sx={{ ml: 'auto', mr: 2, display: { md: 'none' } }}>
                         <MenuIcon />
                     </IconButton>
                 </Toolbar>
