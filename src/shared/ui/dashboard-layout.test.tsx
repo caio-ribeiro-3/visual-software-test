@@ -16,22 +16,24 @@ describe('DashboardLayout', () => {
         );
 
     it('deve renderizar o conteúdo principal e o logotipo', () => {
-        renderLayout();
+        const { unmount } = renderLayout();
         expect(screen.getByTestId('content')).toBeDefined();
-        expect(screen.getByRole('list')).toBeDefined();
+        expect(screen.getAllByTestId('list')).toHaveLength(2);
+        unmount()
     });
 
     it('deve renderizar os itens de menu configurados', () => {
-        renderLayout();
+        const { unmount } = renderLayout();
         expect(screen.getAllByText(/Usuários/i).length).toBeGreaterThan(0);
+        unmount()
     });
 
     it('deve alternar o estado do menu móvel ao clicar no botão de menu', () => {
         renderLayout();
 
-        const menuButton = screen.getByRole('button', { name: /menu/i });
+        const menuButton = screen.getAllByRole('button', { name: /menu/i });
 
-        fireEvent.click(menuButton);
+        fireEvent.click(menuButton[0]);
 
         const drawer = screen.queryByRole('presentation');
         expect(drawer).toBeDefined();

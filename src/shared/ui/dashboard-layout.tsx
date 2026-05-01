@@ -59,7 +59,7 @@ export const DashboardLayout = ({ children }: PropsWithChildren) => {
                 <Box sx={{ p: 2 }}>
                     <Logo />
                 </Box>
-                <List dense>
+                <List data-testid="list" aria-label='list' role='list' dense>
                     {mainListItems.map((item, index) => (
                         <ListItem key={index} disablePadding sx={{ display: 'block' }}>
                             <ListItemButton component={Link} to={item.to} selected={index === 0}>
@@ -86,7 +86,7 @@ export const DashboardLayout = ({ children }: PropsWithChildren) => {
             >
                 <Toolbar sx={{ justifyContent: 'space-between' }}>
                     <div></div>
-                    <IconButton color="inherit" edge="start" onClick={handleDrawerToggle} sx={{ mr: 2, display: { md: 'none' } }}>
+                    <IconButton aria-label='menu' color="inherit" edge="start" onClick={handleDrawerToggle} sx={{ mr: 2, display: { md: 'none' } }}>
                         <MenuIcon />
                     </IconButton>
                 </Toolbar>

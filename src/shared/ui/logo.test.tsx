@@ -5,7 +5,7 @@ import { Logo } from './logo';
 
 describe('Logo', () => {
     it('deve renderizar a imagem do logotipo com o link para a raiz', () => {
-        render(
+        const { unmount } = render(
             <BrowserRouter>
                 <Logo />
             </BrowserRouter>
@@ -17,6 +17,7 @@ describe('Logo', () => {
         expect(link.getAttribute('href')).toBe('/');
         expect(img.getAttribute('src')).toContain('logo_visual_software.png');
         expect(img.getAttribute('width')).toBe('120');
+        unmount()
     });
 
     it('deve ter a propriedade de carregamento antecipado (eager)', () => {

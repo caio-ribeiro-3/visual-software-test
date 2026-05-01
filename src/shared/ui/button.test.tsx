@@ -4,16 +4,18 @@ import { Button } from './button';
 
 describe('Button', () => {
     it('deve renderizar o conteúdo corretamente', () => {
-        render(<Button>Clique aqui</Button>);
+        const { unmount } = render(<Button>Clique aqui</Button>);
         expect(screen.getByText('Clique aqui')).toBeDefined();
+        unmount()
     });
 
     it('deve disparar o evento onClick quando clicado', () => {
         const onClick = vi.fn();
-        render(<Button onClick={onClick}>Enviar</Button>);
+        const { unmount } = render(<Button onClick={onClick}>Enviar</Button>);
 
         fireEvent.click(screen.getByRole('button'));
         expect(onClick).toHaveBeenCalledTimes(1);
+        unmount()
     });
 
     it('deve respeitar o estado desabilitado', () => {

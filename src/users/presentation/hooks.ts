@@ -49,7 +49,10 @@ export function useCreateUser({ onSuccess }: QueryCallbacks) {
 
     const mutation = useMutation({
         handler: new CreateUserUseCase(repository).execute,
-        onSuccess,
+        onSuccess() {
+            form.setValues(defaultValues)
+            onSuccess?.()
+        },
     })
 
     return {
@@ -59,9 +62,7 @@ export function useCreateUser({ onSuccess }: QueryCallbacks) {
         isCreating: mutation.isLoading,
         creationError: mutation.error,
         execute() {
-            form.onSubmit(mutation.mutate).then(() => {
-                form.setValues(defaultValues)
-            })
+            form.onSubmit(mutation.mutate)
         }
     }
 }
